@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, {useEffect, useRef} from "react";
 
 import "./Dropdown.css";
 
-function Dropdown(props) {
-  const dropdownRef = useRef();
+const Dropdown=(props) => {
+  const dropdownRef=useRef();
 
-  const handleClick = (event) => {
+  const handleClick=(event) => {
     if (
-      dropdownRef &&
-      !dropdownRef.current?.contains(event.target) &&
+      dropdownRef&&
+      !dropdownRef.current?.contains(event.target)&&
       props.onClose
     )
       props.onClose();
@@ -25,7 +25,7 @@ function Dropdown(props) {
   return (
     <div
       ref={dropdownRef}
-      className={`dropdown custom-scroll ${props.class ? props.class : ""}`}
+      className={`dropdown custom-scroll ${props.class? props.class:""}`}
     >
       {props.children}
     </div>
